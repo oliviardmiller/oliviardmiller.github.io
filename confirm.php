@@ -1,16 +1,45 @@
+
+<?php session_start();?>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title> Olivia Miller | Home </title>
+  <title> Olivia Miller | Contact </title>
   <meta name="author" content="OMiller">
-  <meta name="description" content="The homepage for Olivia Miller's site">
+  <meta name="description" content="Contact form to reach Olivia Miller">
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 <link rel="stylesheet" href="styles/style.css">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<script>
+ 
+function printDate() {
+    var d = new Date();
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    var hours = d.getHours();
+    var minutes = d.getMinutes();
+     
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+ 
+    var suffix = "AM";
+    if (hours >= 12) {
+        suffix = "PM";
+        hours = hours - 12;
+    }
+     
+    if (hours == 0) {
+        hours = 12;
+    }
+   document.write("It is " + hours + ":" + minutes + " " + suffix + " on " + month + "/" + day + "/" + year);
+}
+ 
+</script>
 
 </head>
 
@@ -19,7 +48,7 @@
 <div class="container">
 
 <header class="topbanner">
-<a href="index.php"><img class="logo" src="images/logo2.jpg" alt="Click this logo to go home" width="175" height="172"></a>
+<a href="http://senna.sjsu.edu/rdean/omiller/final/index.php"><img class="logo" src="images/logo2.jpg" alt="Click this logo to go home" width="175" height="172"></a>
 
 
 <h1> OLIVIA MILLER </h1>
@@ -49,32 +78,17 @@
 <br>
 
 </aside>
+
 <main class="maincolumn">
 
-<h2> Welcome </h2>
 
-This is a site about me, Olivia Miller, where you can find out about me, my employment history, see work samples, and even contact me. Feel free to look around.
-<br>
-<br>
-<ul class="home-link-list">
+<?php echo $_SESSION['statusMessage'];?> 
+ 
+<?php echo $_SESSION['htmlOutput'];?>
 
-<li>Want to know more 
-<a href="about.php">about me</a>? </li>
+<script> printDate(); </script>
 
 
-<li>Want to check out
-<a href="resume.php">my resume</a>? </li>
-
-
-<li>Want to look at some samples of
-<a href="worksamples.php">my work</a>? </li>
-
-<li>Want to
-<a href="contact.php">contact me</a>? </li>
-</ul>
-<br>
-<br>
-<img class="treebanner" src="images/treebanner.jpg" alt="A relaxing photo of trees to add atmosphere" width="700" height="233">
 </main>
 
 <footer class="footer">

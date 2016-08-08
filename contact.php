@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title> Olivia Miller | Home </title>
+  <title> Olivia Miller | Contact </title>
   <meta name="author" content="OMiller">
-  <meta name="description" content="The homepage for Olivia Miller's site">
+  <meta name="description" content="Contact form to reach Olivia Miller">
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -49,32 +49,44 @@
 <br>
 
 </aside>
+
 <main class="maincolumn">
 
-<h2> Welcome </h2>
-
-This is a site about me, Olivia Miller, where you can find out about me, my employment history, see work samples, and even contact me. Feel free to look around.
-<br>
-<br>
-<ul class="home-link-list">
-
-<li>Want to know more 
-<a href="about.php">about me</a>? </li>
+<h2> Contact Me </h2>
 
 
-<li>Want to check out
-<a href="resume.php">my resume</a>? </li>
+I'd love to hear from you!
+
+<form class="contact-form" method="post" action="process.php">
+
+<fieldset>
+
+<div>
+  <label for="name">Name<span class="required"> *</span></label>
+  <input type="text" id="name" name="name">
+  </div>
+<div>
+  <label for="email">Email<span class="required"> *</span></label>
+  <input type="text" id="email" name="email">
+  </div>
+</fieldset>
+
+<fieldset>
+  <div>
+  <label for="message">Write Me A Message</label>
+  <br>
+  <textarea name="message" id="message"></textarea>
+  </div>
 
 
-<li>Want to look at some samples of
-<a href="worksamples.php">my work</a>? </li>
+  <div>
+  <label for="contactback">It's okay to send a reply back via the email above</label>
+  <input type="checkbox" name="contactback[]" id="contactback" value="contactback">
+  </div>
+</fieldset>
 
-<li>Want to
-<a href="contact.php">contact me</a>? </li>
-</ul>
-<br>
-<br>
-<img class="treebanner" src="images/treebanner.jpg" alt="A relaxing photo of trees to add atmosphere" width="700" height="233">
+<input type="submit" value="submit">
+
 </main>
 
 <footer class="footer">
